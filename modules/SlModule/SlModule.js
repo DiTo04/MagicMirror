@@ -10,6 +10,7 @@ Module.register("SlModule", {
         getRelative: 6,
         colored: false,
         broadcastEvents: true,
+        displaySymbol: false
     },
 
     // Define required scripts.
@@ -78,19 +79,21 @@ Module.register("SlModule", {
             }
 
             eventWrapper.className = "normal";
-            var symbolWrapper = document.createElement("td");
-            symbolWrapper.className = "symbol align-right";
-            var symbols = ["train"];
+            if (this.config.displaySymbol) {
+                var symbolWrapper = document.createElement("td");
+                symbolWrapper.className = "symbol align-right";
+                var symbols = ["train"];
 
-            for(var i = 0; i < symbols.length; i++) {
-                var symbol = document.createElement("span");
-                symbol.className = "fa fa-" + symbols[i];
-                if(i > 0){
-                    symbol.style.paddingLeft = "5px";
+                for(var i = 0; i < symbols.length; i++) {
+                    var symbol = document.createElement("span");
+                    symbol.className = "fa fa-" + symbols[i];
+                    if(i > 0){
+                        symbol.style.paddingLeft = "5px";
+                    }
+                    symbolWrapper.appendChild(symbol);
                 }
-                symbolWrapper.appendChild(symbol);
+                eventWrapper.appendChild(symbolWrapper);
             }
-            eventWrapper.appendChild(symbolWrapper);
 
             var departureWrapper = document.createElement("td");
             departureWrapper.innerHTML = this.titleTransform(departure.Destination);
@@ -134,7 +137,8 @@ Module.register("SlModule", {
         this.sendSocketNotification("START_SL", {
             maximumEntries: this.config.maximumEntries,
             fetchInterval: this.config.fetchInterval,
-            station: station
+            station: station,
+            keys: this.config.keys
         });
     },
 

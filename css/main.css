@@ -30,6 +30,22 @@ body {
   color: #666;
 }
 
+img.make-it-fit {
+  max-width: 99%;
+  max-height: 99%;
+}
+
+.module-header {
+  color: #ff7900;
+  font-weight: 300;
+  font-size: 16pt;
+  background-color: #323232;
+  padding: 10px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  text-align: left;
+}
+
 .acent {
   color: #ff7900;
 }
@@ -50,6 +66,15 @@ body {
 .small {
   font-size: 20px;
   line-height: 25px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 3px;
+  background: #000000; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#171717, #000000); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#171717, #000000); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#171717, #000000); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#171717, #000000); /* Standard syntax */
+  border: 2px solid #323232;
+  padding-bottom: 20px;
 }
 
 .medium {
@@ -98,13 +123,11 @@ body {
 
 header {
   text-transform: uppercase;
-  font-size: 15px;
-  font-family: "Roboto Condensed";
-  font-weight: 400;
-  border-bottom: 1px solid #666;
+  font-size: 16px;
+  font-family: "Helvetica Neue";
+  font-weight: 100;
   line-height: 15px;
   padding-bottom: 5px;
-  margin-bottom: 10px;
   color: #999;
 }
 

@@ -21,7 +21,7 @@ module.exports = NodeHelper.create({
 		console.log("Got notification on SL stream")
 		if (notification === "START_SL") {
 			console.log("Starting SL fetching.")
-			this.createFetcher( payload.station, payload.fetchInterval, payload.maximumEntries);
+			this.createFetcher( payload.station, payload.fetchInterval, payload.maximumEntries, payload.keys);
 		}
 	},
 
@@ -33,12 +33,12 @@ module.exports = NodeHelper.create({
 	 * attribute reloadInterval number - Reload interval in milliseconds.
 	 */
 
-	createFetcher: function(station, fetchInterval, maximumEntries) {
+	createFetcher: function(station, fetchInterval, maximumEntries, keys) {
 		var self = this;
 		var fetcher;
 		if (typeof self.fetcher === "undefined") {
 			console.log("Create new SL fetcher for " + station + "with Interval: " + fetchInterval);
-			fetcher = new SLFetcher(station, fetchInterval, maximumEntries);
+			fetcher = new SLFetcher(station, fetchInterval, maximumEntries,keys);
 
 			fetcher.onReceive(function(fetcher) {
 				self.sendSocketNotification("SL_TIMES", {

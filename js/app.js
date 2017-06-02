@@ -10,6 +10,7 @@ var Server = require(__dirname + "/server.js");
 var Utils = require(__dirname + "/utils.js");
 var defaultModules = require(__dirname + "/../modules/default/defaultmodules.js");
 var path = require("path");
+var express = require("express");
 
 // Get version number.
 global.version = JSON.parse(fs.readFileSync("package.json", "utf8")).version;

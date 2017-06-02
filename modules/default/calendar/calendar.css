@@ -12,11 +12,18 @@
 }
 
 .calendar .title {
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 10px;
+  text-align: left;
 }
 
 .calendar .time {
   padding-left: 30px;
+  padding-right: 10px;
   text-align: right;
 }
+
+.calendar .normal {
+  font-size: 15pt;
+  font-weight: 100;
+}
+

@@ -1,16 +1,12 @@
 var SL = require("sl-api");
-var SLFetcher = function(station, fetchInterval, maximumEntries) {
+var SLFetcher = function(station, fetchInterval, maximumEntries, keys) {
     var self = this;
     var departures = [];
     var eventsReceivedCallback = function() {};
     var fetchFailedCallback = function(){};
     var reloadTimer = null;
 
-    var sl = new SL({
-      realtimeInformation: "26cf755433554c2c9a91b141d5fa96d9",
-      disturbanceInformation: "e679c32b21fe46d2b20f3cd8a496e37f",
-      locationLookup: "50803ae16ba64a0daa6408096b911da2",
-    });
+    var sl = new SL(keys);
     var fetchDepartures = function() {
         sl.locationLookup({searchstring: station})
             .then((data)=> {

@@ -1,22 +1,23 @@
-.SL .symbol {
+.SlModule .symbol {
   padding-left: 0;
   padding-right: 10px;
   font-size: 80%;
 }
 
-.SL .symbol span {
+.SlModule .symbol span {
   display: inline-block;
   -ms-transform: translate(0, 2px); /* IE 9 */
   -webkit-transform: translate(0, 2px); /* Safari */
   transform: translate(0, 2px);
 }
 
-.SL .title {
-  padding-left: 0;
-  padding-right: 0;
+.SlModule .title {
+  padding-left: 10px;
+  text-align: left;
 }
 
-.SL .time {
+.SlModule .time {
   padding-left: 30px;
+  padding-right: 10px;
   text-align: right;
 }
