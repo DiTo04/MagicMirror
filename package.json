@@ -60,6 +60,7 @@
     "simple-git": "^1.62.0",
     "socket.io": "^1.7.3",
     "valid-url": "latest",
-    "walk": "latest"
+    "walk": "latest",
+    "sl-api": "latest"
   }
 }
