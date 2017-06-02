@@ -1,0 +1,22 @@
+.SL .symbol {
+  padding-left: 0;
+  padding-right: 10px;
+  font-size: 80%;
+}
+
+.SL .symbol span {
+  display: inline-block;
+  -ms-transform: translate(0, 2px); /* IE 9 */
+  -webkit-transform: translate(0, 2px); /* Safari */
+  transform: translate(0, 2px);
+}
+
+.SL .title {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.SL .time {
+  padding-left: 30px;
+  text-align: right;
+}
