@@ -112,9 +112,9 @@ Module.register("SlModule", {
             var now = moment();
             // Define second, minute, hour, and day variables
             if (departureTime >= now) {
-                timeWrapper.innerHTML = this.capFirst(moment(departureTime, "x").fromNow());  
+                timeWrapper.innerHTML = this.capFirst(moment(departureTime, "x").fromNow(true));
             } else {
-                timeWrapper.innerHTML = "Now!";
+                timeWrapper.innerHTML = "Nu!";
             }
             //timeWrapper.innerHTML += ' - '+ moment(event.startDate,'x').format('lll');
             //console.log(event);

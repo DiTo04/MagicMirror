@@ -212,7 +212,7 @@ Module.register("calendar", {
 					if (this.translate("DAYAFTERTOMORROW") !== "DAYAFTERTOMORROW") {
 						timeWrapper.innerHTML = this.capFirst(this.translate("DAYAFTERTOMORROW"));
 					} else {
-						timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").fromNow());
+						timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").fromNow(true));
 					}
 				} else {
 					/* Check to see if the user displays absolute or relative dates with their events
@@ -239,10 +239,10 @@ Module.register("calendar", {
 						// This event is within the next 48 hours (2 days)
 						if (event.startDate - now < this.config.getRelative * oneHour) {
 							// If event is within 6 hour, display 'in xxx' time format or moment.fromNow()
-							timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").fromNow());
+							timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").format("HH:mm:ss"));
 						} else {
 							// Otherwise just say 'Today/Tomorrow at such-n-such time'
-							timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").calendar());
+							timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").format("dddd HH:mm"));
 						}
 					} else {
 						/* Check to see if the user displays absolute or relative dates with their events
@@ -255,12 +255,12 @@ Module.register("calendar", {
 						if (this.config.timeFormat === "absolute") {
 							if ((this.config.urgency > 1) && (event.startDate - now < (this.config.urgency * oneDay))) {
 								// This event falls within the config.urgency period that the user has set
-								timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").fromNow());
+								timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").fromNow(true));
 							} else {
 								timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").format(this.config.dateFormat));
 							}
 						} else {
-							timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").fromNow());
+							timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").fromNow(true));
 						}
 					}
 				} else {

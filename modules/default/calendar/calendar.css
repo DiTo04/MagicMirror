@@ -24,6 +24,9 @@
 
 .calendar .normal {
   font-size: 15pt;
-  font-weight: 100;
+  letter-spacing: .1px;
+  font-weight: 300;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%)
 }
 

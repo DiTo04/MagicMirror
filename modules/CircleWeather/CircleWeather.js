@@ -93,7 +93,7 @@ Module.register("CircleWeather",{
 			maxValue:this.config.maxDegree, 
 			titlePosition:"inner-top", 
 			unitText: "℃",
-			outerCircleColor:'#FF7900', 
+			outerCircleColor:'#ffffff',
 			innerCircleColor: '#000000',
 			circleAnimationSpeed: this.config.circleAnimationSpeed,
 			size: this.config.circleSize
@@ -110,7 +110,7 @@ Module.register("CircleWeather",{
 			maxValue:20, 
 			titlePosition:"inner-top", 
 			unitText: "m/s",
-			outerCircleColor:'#FF7900', 
+			outerCircleColor:'#ffffff',
 			innerCircleColor: '#000000',
 			circleAnimationSpeed: this.config.circleAnimationSpeed,
 			size: this.config.circleSize
@@ -126,7 +126,7 @@ Module.register("CircleWeather",{
 			start:0, 
 			maxValue:100, 
 			titlePosition:"inner-top", 
-			outerCircleColor:'#FF7900', 
+			outerCircleColor:'#ffffff',
 			innerCircleColor: '#000000',
 			circleAnimationSpeed: this.config.circleAnimationSpeed,
 			size: this.config.circleSize
